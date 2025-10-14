@@ -93,6 +93,8 @@ function MobileNavItem({
   )
 }
 
+// MOBILENAVIGATION
+
 function MobileNavigation(
   props: React.ComponentPropsWithoutRef<typeof Popover>,
 ) {
@@ -162,6 +164,8 @@ function NavItem({
   )
 }
 
+// DESKTOPNAVIGATION
+
 function DesktopNavigation(props: React.ComponentPropsWithoutRef<'nav'>) {
   return (
     <nav {...props}>
@@ -175,6 +179,8 @@ function DesktopNavigation(props: React.ComponentPropsWithoutRef<'nav'>) {
     </nav>
   )
 }
+
+//LIGHTMOOD&DARKMOOD
 
 function ThemeToggle() {
   let { resolvedTheme, setTheme } = useTheme()
@@ -218,6 +224,8 @@ function AvatarContainer({
     />
   )
 }
+
+//LOGO OR AVATAR
 
 function Avatar({
   large = false,
@@ -353,6 +361,8 @@ export function Header() {
       window.removeEventListener('resize', updateStyles)
     }
   }, [isHomePage])
+
+// STARTHEADER
 
   return (
     <>

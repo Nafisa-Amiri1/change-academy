@@ -1,4 +1,14 @@
 import Link from 'next/link'
+import {
+  GitHub,
+  Instagram,
+  LinkedIn,
+  X,
+} from '@/components/SocialIcons'
+import logoAirbnb from '@/images/logos/airbnb.svg'
+import logoFacebook from '@/images/logos/facebook.svg'
+import logoPlanetaria from '@/images/logos/planetaria.svg'
+import logoStarbucks from '@/images/logos/starbucks.svg'
 
 import { ContainerInner, ContainerOuter } from '@/components/Container'
 
@@ -31,6 +41,26 @@ export function Footer() {
                 <NavLink href="/projects">Projects</NavLink>
                 <NavLink href="/speaking">Speaking</NavLink>
                 <NavLink href="/uses">Uses</NavLink>
+              </div>
+              <div>
+                <div className="mt-6 flex gap-6">
+                  <Link href="#">
+                    <X className="h-6 w-6 fill-zinc-500 transition hover:fill-teal-500 dark:fill-zinc-400" />
+                  </Link>
+
+                  <Link href="#">
+                    <Instagram className="h-6 w-6 fill-zinc-500 transition hover:fill-teal-500 dark:fill-zinc-400" />
+                  </Link>
+
+                  <Link href="#">
+                    <GitHub className="h-6 w-6 fill-zinc-500 transition hover:fill-teal-500 dark:fill-zinc-400" />
+                  </Link>
+
+                  <Link href="#">
+                    <LinkedIn className="h-6 w-6 fill-zinc-500 transition hover:fill-teal-500 dark:fill-zinc-400" />
+                  </Link>
+                </div>
+
               </div>
               <p className="text-sm text-zinc-400 dark:text-zinc-500">
                 &copy; {new Date().getFullYear()} Spencer Sharp. All rights
