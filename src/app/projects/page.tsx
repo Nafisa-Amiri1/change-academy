@@ -3,47 +3,72 @@ import Image from 'next/image'
 
 import { Card } from '@/components/Card'
 import { SimpleLayout } from '@/components/SimpleLayout'
-import logoAnimaginary from '@/images/logos/animaginary.svg'
-import logoCosmos from '@/images/logos/cosmos.svg'
-import logoHelioStream from '@/images/logos/helio-stream.svg'
-import logoOpenShuttle from '@/images/logos/open-shuttle.svg'
-import logoPlanetaria from '@/images/logos/planetaria.svg'
-
+import logoBookShop from '@/images/logos/book-shop.svg'
+import LogoTravel from '@/images/logos/Travels.svg'
+import logoR from '@/images/logos/R.svg'
+import logoSki from '@/images/logos/ski.svg'
+import logoBank from '@/images/logos/bank.svg'
+import music from "@/images/logos/Music.svg"
 const projects = [
   {
-    name: 'Planetaria',
+    name: 'Book Store Website',
     description:
-      'Creating technology to empower civilians to explore space on their own terms.',
-    link: { href: 'http://planetaria.tech', label: 'planetaria.tech' },
-    logo: logoPlanetaria,
+      'The Book Store Website is a sleek, responsive platform for browsing books online.',
+    link: {
+      href: 'https://hakimanoori.github.io/Book-Store-website',
+      label: 'hakimanoori.github.io/Book-Store-website',
+    },
+    logo: logoBookShop,
   },
   {
-    name: 'Animaginary',
+    name: 'Travel-Website',
     description:
-      'High performance web animation library, hand-written in optimized WASM.',
-    link: { href: '#', label: 'github.com' },
-    logo: logoAnimaginary,
+      'A sleek travel platform showcasing destinations with a smooth, enjoyable browsing experience.',
+    link: {
+      href: 'https://hakimanoori.github.io/Travel-Website',
+      label: 'hakimanoori.github.io/Travel-Website',
+    },
+    logo: LogoTravel,
   },
   {
-    name: 'HelioStream',
+    name: 'Roshanak',
     description:
-      'Real-time video streaming library, optimized for interstellar transmission.',
-    link: { href: '#', label: 'github.com' },
-    logo: logoHelioStream,
+      'Roshanak is a web platform that empowers Afghan girls through accessible education, mentorship, and skill-building opportunities.',
+    link: {
+      href: 'https://fatima-hassani-roshanak.netlify.app',
+      label: 'fatima-hassani-roshanak.netlify.app',
+    },
+    logo: logoR,
   },
   {
-    name: 'cosmOS',
+    name: 'skincare',
     description:
-      'The operating system that powers our Planetaria space shuttles.',
-    link: { href: '#', label: 'github.com' },
-    logo: logoCosmos,
+      'A beautiful skincare platform offering luxurious products with a pleasant, user-friendly experience.',
+    link: {
+      href: 'https://fatima-hassani-skincare-project.netlify.app',
+      label: 'fatima-hassani-skincare-project.netlify.app',
+    },
+    logo: logoSki,
   },
   {
-    name: 'OpenShuttle',
+    name: 'Bankist',
     description:
-      'The schematics for the first rocket I designed that successfully made it to orbit.',
-    link: { href: '#', label: 'github.com' },
-    logo: logoOpenShuttle,
+      'is a small demo banking site for practicing transfers, loans, and other interactive banking features.',
+    link: {
+      href: 'https://bankist-mousavi.netlify.app/',
+      label: 'bankist-mousavi.netlify.app',
+    },
+    logo: logoBank,
+  },
+  {
+    name: 'Music site',
+    description:
+      'is a small demo banking site for practicing transfers, loans, and other interactive banking features.',
+    link: {
+      href: 'https://music-projct-333.netlify.app',
+      label: 'music-projct-333.netlify.app',
+    },
+    logo: music,
   },
 ]
 
@@ -60,14 +85,14 @@ function LinkIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
 
 export const metadata: Metadata = {
   title: 'Projects',
-  description: 'Things I’ve made trying to put my dent in the universe.',
+  description: 'Projects We’ve Built to Leave Our Mark on the World',
 }
 
 export default function Projects() {
   return (
     <SimpleLayout
-      title="Things I’ve made trying to put my dent in the universe."
-      intro="I’ve worked on tons of little projects over the years but these are the ones that I’m most proud of. Many of them are open-source, so if you see something that piques your interest, check out the code and contribute if you have ideas for how it can be improved."
+      title="Projects We’ve Built to Leave Our Mark on the World"
+      intro="Over the months, we’ve worked on a variety of projects — each one a step toward growth and innovation. These are the ones we’re most proud of. Many are open-source, built with care and collaboration in mind. If something catches your attention, feel free to explore the code and share your ideas for improvement."
     >
       <ul
         role="list"
