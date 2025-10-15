@@ -4,7 +4,6 @@ import clsx from 'clsx'
 import { Container } from '@/components/Container'
 import Blog from '@/components/Blog'
 import Services from '@/components/Services'
-// impoet Projects from "@/components/Projects"
 import { Button } from '@/components/Button'
 
 import image1 from '@/images/photos/image-1.jpg'
@@ -120,7 +119,7 @@ export default async function Home() {
 
         <Blog />
         <Services />
-        {/* <Projects /> */}
+        <Projects />
       </Container>
     </>
   )
