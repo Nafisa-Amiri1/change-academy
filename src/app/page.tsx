@@ -13,6 +13,9 @@
 // import image5 from '@/images/photos/image-5.jpg'
 // import Projects from './projects/page'
 
+// import { Button } from '@/components/Button'
+// import Navbar from "@/components/Navbar" 
+
 
 // interface Role {
 //   company: string
