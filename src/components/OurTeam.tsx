@@ -63,8 +63,8 @@ const people = [
     name: 'Hafiza Sharify',
     role: 'Frontend Developer',
     imageUrl: HafizaImg,
-    GitHubUrl: 'https://github.com/Moon-child-H',
-    linkedinUrl: 'https://www.linkedin.com/in/hafeza-sharifi-5b7118364 ',
+    GitHubUrl: '#',
+    linkedinUrl: '#',
   },
   {
     name: 'Zainab Jafari',

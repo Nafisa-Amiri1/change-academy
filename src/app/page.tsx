@@ -4,7 +4,9 @@ import clsx from 'clsx'
 import { Container } from '@/components/Container'
 import Blog from '@/components/Blog'
 import Services from '@/components/Services'
-
+import About from '@/components/About'
+import OurTeam from '@/components/OurTeam'
+import ContactUs from '@/components/ContactUs'
 import image1 from '@/images/photos/image-1.jpg'
 import image2 from '@/images/photos/image-2.jpg'
 import image3 from '@/images/photos/image-3.jpg'
@@ -118,8 +120,11 @@ export default async function Home() {
         </div>
 
         <Blog />
+        <About />
         <Services />
         <Projects />
+        <OurTeam />
+        <ContactUs />
       </Container>
     </>
   )
