@@ -194,7 +194,7 @@ export default function Projects() {
             type="submit"
             className="block w-full rounded-md bg-teal-600 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-xs focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-500"
           >
-            Let's talk
+            Let&apos;s talk
           </button>
         </div>
       </form>

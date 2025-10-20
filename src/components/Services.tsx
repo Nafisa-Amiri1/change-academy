@@ -130,7 +130,7 @@ const FeaturesSection: React.FC = () => {
                         {features.map((feature, index) => (
                             <div
                                 key={index}
-                                className="relative bg-[#18181b] p-6 pl-16 rounded-xl shadow-md hover:bg-[#242424] hover:text-teal-500 hover:shadow-lg transition-all duration-300"
+                                className="relative bg-white hover:dark:bg-[#242424] dark:bg-[#18181b] p-6 pl-16 rounded-xl shadow-md hover:bg-gray-50  hover:text-teal-500 hover:shadow-lg transition-all duration-300"
                             >
                                 <dt className="text-base font-semibold text-gray-900 dark:text-white">
                                     <div className="absolute top-4 left-1 flex w-12 h-12 items-center justify-center rounded-lg bg-[#68d2bc] text-white">

@@ -11,7 +11,7 @@ import SadiqaImg from '@/images/Sediqa.png'
 import ParvenImg from '@/images/Parven.png'
 import TayebehImg from '@/images/Tayebeh.png'
 import HafizaImg from '@/images/Hafiza.png'
-import ZainabImg from '@/Images/Zainab.png'
+import ZaynabImg from '@/images/Zaynab.png'
 import MasoumehImg from '@/images/Masoumeh.png'
 
 const people = [
@@ -69,7 +69,7 @@ const people = [
   {
     name: 'Zainab Jafari',
     role: 'Frontend Developer',
-    imageUrl: ZainabImg,
+    imageUrl: ZaynabImg,
     GitHubUrl: 'https://github.com/Zainab-Jafari2025',
     linkedinUrl: 'https://www.linkedin.com/in/zainab-jafari-1419ab31b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
   },
