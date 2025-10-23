@@ -23,7 +23,6 @@ export default function BlogSlider() {
 
     return (
         <div className="w-full max-w-5xl mx-auto mt-10 overflow-hidden">
-            {/* عکس‌ها با حرکت انیمیشنی */}
             <div className="flex transition-transform duration-500 ease-in-out"
                 style={{ transform: `translateX(-${(100 / 3) * startIndex}%)` }}>
                 {images.map((img, index) => (
@@ -39,18 +38,17 @@ export default function BlogSlider() {
                 ))}
             </div>
 
-            {/* دکمه‌ها پایین عکس‌ها و سمت راست */}
             <div className="flex justify-end gap-2 mt-4">
                 <button
                     onClick={prev}
-                    className=" text-black px-4 py-2 rounded hover:opacity-90 transition bg-[#68d2bc]"
+                    className="px-4 py-2 rounded hover:opacity-90 transition text-white bg-[#68d2bc]"
                     disabled={startIndex === 0}
                 >
                     ‹ Prev
                 </button>
                 <button
                     onClick={next}
-                    className=" text-black px-4 py-2 rounded hover:opacity-90 transition bg-[#68d2bc]"
+                    className="px-4 py-2 rounded hover:opacity-90 text-white transition bg-[#68d2bc]"
                     disabled={startIndex === images.length - 3}
                 >
                     Next ›
