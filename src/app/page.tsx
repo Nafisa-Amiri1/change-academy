@@ -14,13 +14,33 @@ export default async function Home() {
   return (
     <>
       <Container>
-        <HomeHero />
-        <Blog />
-        <About />
-        <Services />
-        <Projects />
-        <OurTeam />
-        <ContactUs />
+        <section id="home">
+          <HomeHero />
+        </section>
+
+        <section id="blog">
+          <Blog />
+        </section>
+
+        <section id="about">
+          <About />
+        </section>
+
+        <section id="services">
+          <Services />
+        </section>
+
+        <section id="projects">
+          <Projects />
+        </section>
+
+        <section id="ourteam">
+          <OurTeam />
+        </section>
+
+        <section id="contact">
+          <ContactUs />
+        </section>
       </Container>
     </>
   )
