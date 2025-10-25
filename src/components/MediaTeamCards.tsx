@@ -45,82 +45,109 @@ export default function FeaturesSection() {
     ];
 
     return (
-        <section className="py-16 bg-white">
-            <div className="max-w-6xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-                {/* عنوان و توضیحات */}
-                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 leading-snug">
-                    Boost Your Brand. Save Your Time. <br /> Let Our Media Team Handle It.
-                </h2>
-                <p className="text-base sm:text-lg text-gray-600 mb-12">
-                    We help businesses stand out online through creative design, smart marketing, and consistent brand strategy.
+      <section className="bg-white py-16">
+        <div className="mx-auto max-w-6xl px-4 text-center sm:px-6 lg:px-8">
+          {/* عنوان و توضیحات */}
+          <h2 className="mb-4 text-2xl leading-snug font-bold text-gray-900 sm:text-3xl lg:text-4xl">
+            Boost Your Brand. Save Your Time. <br /> Let Our Media Team Handle
+            It.
+          </h2>
+          <p className="mb-12 text-base text-gray-600 sm:text-lg">
+            We help businesses stand out online through creative design, smart
+            marketing, and consistent brand strategy.
+          </p>
+
+          {/* بخش ویژگی‌ها */}
+          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 sm:gap-10 lg:grid-cols-3">
+            {features.map((feature, index) => (
+              <div
+                key={index}
+                className="flex flex-col items-center rounded-2xl bg-white p-6 text-center shadow-sm transition-colors duration-300 hover:bg-gray-50"
+              >
+                {feature.icon}
+                <h3 className="mb-2 text-lg font-semibold text-gray-800 sm:text-xl">
+                  {feature.title}
+                </h3>
+                <p className="text-sm text-gray-600 sm:text-base">
+                  {feature.description}
                 </p>
+              </div>
+            ))}
+          </div>
 
-                {/* بخش ویژگی‌ها */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10">
-                    {features.map((feature, index) => (
-                        <div
-                            key={index}
-                            className="flex flex-col items-center text-center p-6 rounded-2xl bg-white hover:bg-gray-50 transition-colors duration-300 shadow-sm"
-                        >
-                            {feature.icon}
-                            <h3 className="text-lg sm:text-xl font-semibold text-gray-800 mb-2">
-                                {feature.title}
-                            </h3>
-                            <p className="text-gray-600 text-sm sm:text-base">
-                                {feature.description}
-                            </p>
-                        </div>
-                    ))}
-                </div>
+          {/* بخش نمونه کار */}
+          <div className="mt-20">
+            <p className="p-2 text-xl font-semibold text-[#68d2bc] sm:text-2xl">
+              Real Estate Design & Marketing Services
+            </p>
+            <p className="p-2 text-lg text-black sm:text-xl">
+              Professional Editing of Interior & Exterior Property Photos
+            </p>
 
-                {/* بخش نمونه کار */}
-                <div className="mt-20">
-                    <p className="text-[#68d2bc] text-xl sm:text-2xl font-semibold p-2">
-                        Real Estate Design & Marketing Services
-                    </p>
-                    <p className="text-black text-lg sm:text-xl p-2">
-                        Professional Editing of Interior & Exterior Property Photos
-                    </p>
+            <div className="mx-auto max-w-4xl px-2 sm:px-6">
+              <p className="text-base text-gray-700 sm:text-lg">
+                We enhance property images by refining colors, lighting, and
+                details to create attractive and realistic visuals — perfect for
+                advertising and sales platforms.
+              </p>
 
-                    <div className="px-2 sm:px-6 max-w-4xl mx-auto">
-                        <p className="text-base sm:text-lg text-gray-700">
-                            We enhance property images by refining colors, lighting, and details to create attractive and realistic visuals — perfect for advertising and sales platforms.
-                        </p>
+              <p className="mt-4 text-base font-semibold text-gray-700 sm:text-lg">
+                Samples Include:
+              </p>
+              <ul className="list-inside list-disc space-y-1 text-base text-gray-700 sm:text-lg">
+                <li>
+                  Two interior photos with color correction, lighting
+                  adjustment, and noise removal
+                </li>
+                <li>
+                  One exterior photo enhanced with improved sky, sunlight, and
+                  clarity
+                </li>
+              </ul>
 
-                        <p className="mt-4 font-semibold text-base sm:text-lg text-gray-700">Samples Include:</p>
-                        <ul className="list-disc list-inside space-y-1 text-base sm:text-lg text-gray-700">
-                            <li>Two interior photos with color correction, lighting adjustment, and noise removal</li>
-                            <li>One exterior photo enhanced with improved sky, sunlight, and clarity</li>
-                        </ul>
+              <p className="mt-4 text-base font-semibold text-gray-700 sm:text-lg">
+                Our Goal:
+              </p>
+              <p className="text-base text-gray-700 sm:text-lg">
+                To showcase the best version of every property and capture
+                buyers’ attention and trust.
+              </p>
 
-                        <p className="mt-4 font-semibold text-base sm:text-lg text-gray-700">Our Goal:</p>
-                        <p className="text-base sm:text-lg text-gray-700">
-                            To showcase the best version of every property and capture buyers’ attention and trust.
-                        </p>
-
-                        <div className="mt-8">
-                            <Link href="#contactUs">
-                                <button className="px-6 py-3 bg-[#68d2bc] text-white font-semibold rounded-xl hover:bg-[#57b0a4] transition-colors duration-300">
-                                    Contact Us
-                                </button>
-                            </Link>
-                        </div>
-                    </div>
-
-                    {/* تصاویر نمونه */}
-                    <div className="mt-10 flex flex-col sm:flex-row justify-center items-center gap-8">
-                        <div className="w-full sm:w-[320px] md:w-[370px] h-[220px] sm:h-[250px] bg-[#68d2bc] rounded-2xl overflow-hidden shadow-md">
-                            <img className="object-cover w-full h-full" src={home1.src} alt="home image" />
-                        </div>
-                        <div className="w-full sm:w-[320px] md:w-[370px] h-[220px] sm:h-[250px] bg-[#68d2bc] rounded-2xl overflow-hidden shadow-md">
-                            <img className="object-cover w-full h-full" src={home2.src} alt="home image" />
-                        </div>
-                        <div className="w-full sm:w-[320px] md:w-[370px] h-[220px] sm:h-[250px] bg-[#68d2bc] rounded-2xl overflow-hidden shadow-md">
-                            <img className="object-cover w-full h-full" src={home3.src} alt="home image" />
-                        </div>
-                    </div>
-                </div>
+              <div className="mt-8">
+                <Link href="#contactus">
+                  <button className="rounded-xl bg-[#68d2bc] px-6 py-3 font-semibold text-white transition-colors duration-300 hover:bg-[#57b0a4]">
+                    Contact Us
+                  </button>
+                </Link>
+              </div>
             </div>
-        </section>
-    );
+
+            {/* تصاویر نمونه */}
+            <div className="mt-10 flex flex-col items-center justify-center gap-8 sm:flex-row">
+              <div className="h-[220px] w-full overflow-hidden rounded-2xl bg-[#68d2bc] shadow-md sm:h-[250px] sm:w-[320px] md:w-[370px]">
+                <img
+                  className="h-full w-full object-cover"
+                  src={home1.src}
+                  alt="home image"
+                />
+              </div>
+              <div className="h-[220px] w-full overflow-hidden rounded-2xl bg-[#68d2bc] shadow-md sm:h-[250px] sm:w-[320px] md:w-[370px]">
+                <img
+                  className="h-full w-full object-cover"
+                  src={home2.src}
+                  alt="home image"
+                />
+              </div>
+              <div className="h-[220px] w-full overflow-hidden rounded-2xl bg-[#68d2bc] shadow-md sm:h-[250px] sm:w-[320px] md:w-[370px]">
+                <img
+                  className="h-full w-full object-cover"
+                  src={home3.src}
+                  alt="home image"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    )
 }
