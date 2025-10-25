@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
@@ -15,28 +15,34 @@ import clsx from 'clsx'
 import { Container } from '@/components/Container'
 import avatarImage from '@/images/avatar.jpg'
 
+// SCROLL SMOOTH FUNCTION
+function scrollToSection(href: string) {
+  const id = href.replace('/#', '')
+  const el = document.getElementById(id)
+  if (el) el.scrollIntoView({ behavior: 'smooth' })
+}
+
+// ICONS
 function CloseIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
   return (
-    <svg viewBox="0 0 24 24" aria-hidden="true" {...props}>
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" {...props}>
       <path
-        d="m17.25 6.75-10.5 10.5M6.75 6.75l10.5 10.5"
-        fill="none"
+        d="M6 18L18 6M6 6l12 12"
         stroke="currentColor"
-        strokeWidth="1.5"
+        strokeWidth={2}
         strokeLinecap="round"
         strokeLinejoin="round"
       />
     </svg>
   )
 }
-
 function ChevronDownIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
   return (
-    <svg viewBox="0 0 8 6" aria-hidden="true" {...props}>
+    <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" {...props}>
       <path
-        d="M1.75 1.75 4 4.25l2.25-2.5"
-        fill="none"
-        strokeWidth="1.5"
+        d="M3.5 6.5L8 10.5l4.5-4"
+        stroke="currentColor"
+        strokeWidth={1.5}
         strokeLinecap="round"
         strokeLinejoin="round"
       />
@@ -44,6 +50,7 @@ function ChevronDownIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
   )
 }
 
+// MOBILE NAV ITEM
 function MobileNavItem({
   href,
   children,
@@ -53,15 +60,18 @@ function MobileNavItem({
 }) {
   return (
     <li>
-      <PopoverButton as={Link} href={href} className="block py-2">
+      <PopoverButton
+        as="button"
+        onClick={() => scrollToSection(href)}
+        className="block w-full py-2 text-left"
+      >
         {children}
       </PopoverButton>
     </li>
   )
 }
 
-// MOBILENAVIGATION
-
+// MOBILE NAVIGATION
 function MobileNavigation(
   props: React.ComponentPropsWithoutRef<typeof Popover>,
 ) {
@@ -84,19 +94,17 @@ function MobileNavigation(
           <PopoverButton aria-label="Close menu" className="-m-1 p-1">
             <CloseIcon className="h-6 w-6 text-zinc-500" />
           </PopoverButton>
-          <h2 className="text-sm font-medium text-zinc-600">
-            Navigation
-          </h2>
+          <h2 className="text-sm font-medium text-zinc-600">Navigation</h2>
         </div>
         <nav className="mt-6">
           <ul className="-my-2 divide-y divide-zinc-100 text-base text-zinc-800">
-            <MobileNavItem href="#home">Home</MobileNavItem>
-            <MobileNavItem href="#about">About</MobileNavItem>
-            <MobileNavItem href="#services">Services</MobileNavItem>
-            <MobileNavItem href="#projects">Projects</MobileNavItem>
-            <MobileNavItem href="#ourteam">OurTeam</MobileNavItem>
-            <MobileNavItem href="#MediaTeam">MediaTeam</MobileNavItem>
-            <MobileNavItem href="#contact">ContactUs</MobileNavItem>
+            <MobileNavItem href="/#home">Home</MobileNavItem>
+            <MobileNavItem href="/#about">About</MobileNavItem>
+            <MobileNavItem href="/#services">Services</MobileNavItem>
+            <MobileNavItem href="/#projects">Projects</MobileNavItem>
+            <MobileNavItem href="/#ourteam">OurTeam</MobileNavItem>
+            <MobileNavItem href="/#MediaTeam">MediaTeam</MobileNavItem>
+            <MobileNavItem href="/#contact">ContactUs</MobileNavItem>
           </ul>
         </nav>
       </PopoverPanel>
@@ -104,6 +112,7 @@ function MobileNavigation(
   )
 }
 
+// DESKTOP NAV ITEM WITH SMOOTH SCROLL
 function NavItem({
   href,
   children,
@@ -115,48 +124,46 @@ function NavItem({
 
   return (
     <li>
-      <Link
+      <a
         href={href}
+        onClick={(e) => {
+          e.preventDefault()
+          scrollToSection(href)
+        }}
         className={clsx(
           'relative block px-3 py-2 transition',
-          isActive
-            ? 'text-teal-500'
-            : 'hover:text-teal-500',
+          isActive ? 'text-teal-500' : 'hover:text-teal-500',
         )}
       >
         {children}
         {isActive && (
-          <span className="absolute inset-x-1 -bottom-px h-px bg-linear-to-r from-teal-500/0 via-teal-500/40 to-teal-500/0"/>
+          <span className="absolute inset-x-1 -bottom-px h-px bg-linear-to-r from-teal-500/0 via-teal-500/40 to-teal-500/0" />
         )}
-      </Link>
+      </a>
     </li>
   )
 }
 
-// DESKTOPNAVIGATION
-
+// DESKTOP NAVIGATION
 function DesktopNavigation(props: React.ComponentPropsWithoutRef<'nav'>) {
   return (
     <nav {...props}>
       <ul className="flex rounded-full bg-white/90 px-3 text-sm font-medium text-zinc-800 shadow-lg ring-1 shadow-zinc-800/5 ring-zinc-900/5 backdrop-blur-sm">
-        <NavItem href="#home">Home</NavItem>
-        <NavItem href="#about">About</NavItem>
-        <NavItem href="#services">Services</NavItem>
-        <NavItem href="#projects">Projects</NavItem>
-        <NavItem href="#ourteam">OurTeam</NavItem>
-        <NavItem href="#MediaTeam">MediaTeam</NavItem>
-        <NavItem href="#contact">ContactUs</NavItem>
+        <NavItem href="/#home">Home</NavItem>
+        <NavItem href="/#about">About</NavItem>
+        <NavItem href="/#services">Services</NavItem>
+        <NavItem href="/#projects">Projects</NavItem>
+        <NavItem href="/#ourteam">OurTeam</NavItem>
+        <NavItem href="/#MediaTeam">MediaTeam</NavItem>
+        <NavItem href="/#contact">ContactUs</NavItem>
       </ul>
     </nav>
   )
 }
 
-//LIGHTMOOD&DARKMOOD
-
+// AVATAR & HEADER
 function clamp(number: number, a: number, b: number) {
-  let min = Math.min(a, b)
-  let max = Math.max(a, b)
-  return Math.min(Math.max(number, min), max)
+  return Math.min(Math.max(number, Math.min(a, b)), Math.max(a, b))
 }
 
 function AvatarContainer({
@@ -167,14 +174,12 @@ function AvatarContainer({
     <div
       className={clsx(
         className,
-        'h-10 w-10 rounded-full bg-white/90 p-0.5 shadow-lg ring-1 shadow-zinc-800/5 ring-zinc-900/5 backdrop-blur-sm'
+        'h-10 w-10 rounded-full bg-white/90 p-0.5 shadow-lg ring-1 shadow-zinc-800/5 ring-zinc-900/5 backdrop-blur-sm',
       )}
       {...props}
     />
   )
 }
-
-//LOGO OR AVATAR
 
 function Avatar({
   large = false,
@@ -204,9 +209,9 @@ function Avatar({
   )
 }
 
+// HEADER COMPONENT
 export function Header() {
   let isHomePage = usePathname() === '/'
-
   let headerRef = useRef<React.ElementRef<'div'>>(null)
   let avatarRef = useRef<React.ElementRef<'div'>>(null)
   let isInitial = useRef(true)
@@ -224,10 +229,7 @@ export function Header() {
     }
 
     function updateHeaderStyles() {
-      if (!headerRef.current) {
-        return
-      }
-
+      if (!headerRef.current) return
       let { top, height } = headerRef.current.getBoundingClientRect()
       let scrollY = clamp(
         window.scrollY,
@@ -235,10 +237,7 @@ export function Header() {
         document.body.scrollHeight - window.innerHeight,
       )
 
-      if (isInitial.current) {
-        setProperty('--header-position', 'sticky')
-      }
-
+      if (isInitial.current) setProperty('--header-position', 'sticky')
       setProperty('--content-offset', `${downDelay}px`)
 
       if (isInitial.current || scrollY < downDelay) {
@@ -265,33 +264,28 @@ export function Header() {
     }
 
     function updateAvatarStyles() {
-      if (!isHomePage) {
-        return
-      }
-
-      let fromScale = 1
-      let toScale = 36 / 64
-      let fromX = 0
-      let toX = 2 / 16
-
+      if (!isHomePage) return
+      let fromScale = 1,
+        toScale = 36 / 64,
+        fromX = 0,
+        toX = 2 / 16
       let scrollY = downDelay - window.scrollY
-
-      let scale = (scrollY * (fromScale - toScale)) / downDelay + toScale
-      scale = clamp(scale, fromScale, toScale)
-
-      let x = (scrollY * (fromX - toX)) / downDelay + toX
-      x = clamp(x, fromX, toX)
-
+      let scale = clamp(
+        (scrollY * (fromScale - toScale)) / downDelay + toScale,
+        fromScale,
+        toScale,
+      )
+      let x = clamp((scrollY * (fromX - toX)) / downDelay + toX, fromX, toX)
       setProperty(
         '--avatar-image-transform',
         `translate3d(${x}rem, 0, 0) scale(${scale})`,
       )
-
       let borderScale = 1 / (toScale / scale)
       let borderX = (-toX + x) * borderScale
-      let borderTransform = `translate3d(${borderX}rem, 0, 0) scale(${borderScale})`
-
-      setProperty('--avatar-border-transform', borderTransform)
+      setProperty(
+        '--avatar-border-transform',
+        `translate3d(${borderX}rem, 0, 0) scale(${borderScale})`,
+      )
       setProperty('--avatar-border-opacity', scale === toScale ? '1' : '0')
     }
 
@@ -304,14 +298,11 @@ export function Header() {
     updateStyles()
     window.addEventListener('scroll', updateStyles, { passive: true })
     window.addEventListener('resize', updateStyles)
-
     return () => {
       window.removeEventListener('scroll', updateStyles)
       window.removeEventListener('resize', updateStyles)
     }
   }, [isHomePage])
-
-  // STARTHEADER
 
   return (
     <>

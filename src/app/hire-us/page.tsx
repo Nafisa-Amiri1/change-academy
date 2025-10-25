@@ -7,17 +7,24 @@ export default function HireUs() {
     name: '',
     email: '',
     service: '',
+    budget: '',
     notRobot: false,
     confirmEmail: '',
     password: '',
   })
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>,
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
+    >,
   ) => {
-    const target = e.target as HTMLInputElement | HTMLSelectElement
+    const target = e.target as
+      | HTMLInputElement
+      | HTMLSelectElement
+      | HTMLTextAreaElement
     const { name, value, type } = target
-    const newValue = type === 'checkbox' ? (target as HTMLInputElement).checked : value
+    const newValue =
+      type === 'checkbox' ? (target as HTMLInputElement).checked : value
     setFormData({
       ...formData,
       [name]: newValue,
@@ -35,7 +42,7 @@ export default function HireUs() {
   }
 
   return (
-    <section className="bg-white px-6 py-16 text-gray-800 max-w-4xl m-auto">
+    <section className="m-auto max-w-4xl bg-white px-6 py-16 text-gray-800">
       <div className="mx-auto max-w-4xl text-center">
         {/* Title */}
         <h2 className="mb-4 text-3xl font-bold">Hire Us</h2>
@@ -121,31 +128,23 @@ export default function HireUs() {
             />
           </div>
 
-          {/* Password */}
+          {/* Budget */}
           <div>
-            <label className="mb-1 block text-sm font-medium">Password</label>
-            <input
-              type="password"
-              name="password"
-              value={formData.password}
-              onChange={handleChange}
-              className="block w-full rounded-md border-0 bg-gray-100 px-3.5 py-2 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-200 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-teal-500"
-              placeholder="Enter your password"
-              required
-            />
-          </div>
-
-          {/* I'm not a robot */}
-          <div className="flex items-center space-x-2">
-            <input
-              type="checkbox"
-              name="notRobot"
-              checked={formData.notRobot}
-              onChange={handleChange}
-              className="h-4 w-4 rounded border-gray-300 text-teal-500 focus:ring-teal-400"
-              required
-            />
-            <label className="text-sm text-gray-700">I'm not a robot</label>
+            <label className="mb-1 block text-sm font-medium">Budget</label>
+            <div className="relative">
+              <span className="absolute top-1/2 left-3 -translate-y-1/2 text-gray-500">
+                $
+              </span>
+              <input
+                type="number"
+                name="budget"
+                min="0"
+                value={formData.budget || ''}
+                onChange={handleChange}
+                className="block w-full rounded-md border-0 bg-gray-100 px-9 py-2 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-200 transition-all duration-300 ease-out placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-teal-500"
+                placeholder="Enter your budget"
+              />
+            </div>
           </div>
 
           {/* Service Selection */}
@@ -161,12 +160,44 @@ export default function HireUs() {
               required
             >
               <option value="">Choose a service</option>
-              <option value="Frontend">Frontend</option>
-              <option value="Backend">Backend</option>
+              <option value="website">Website</option>
               <option value="UI/UX">UI/UX</option>
               <option value="Mobile">Mobile</option>
               <option value="Graphic Design">Graphic Design</option>
             </select>
+          </div>
+
+          {/* Message */}
+          <div className="sm:col-span-2">
+            <label
+              htmlFor="message"
+              className="block text-sm/6 font-semibold text-gray-900"
+            >
+              Message
+            </label>
+            <div className="mt-2.5">
+              <textarea
+                id="message"
+                name="message"
+                rows={4}
+                onChange={handleChange}
+                className="block w-full rounded-md border-0 bg-gray-100 px-3.5 py-2 text-base text-gray-900 outline-1 outline-gray-200 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-teal-500"
+                placeholder="Describe your project requirements..."
+              />
+            </div>
+          </div>
+
+          {/* I'm not a robot */}
+          <div className="flex items-center space-x-2">
+            <input
+              type="checkbox"
+              name="notRobot"
+              checked={formData.notRobot}
+              onChange={handleChange}
+              className="h-4 w-4 rounded border-gray-300 text-teal-500 focus:ring-teal-400"
+              required
+            />
+            <label className="text-sm text-gray-700">I'm not a robot</label>
           </div>
 
           {/* Submit Button */}
