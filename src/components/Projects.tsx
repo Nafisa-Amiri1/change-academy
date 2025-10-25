@@ -1,196 +1,124 @@
-import { type Metadata } from "next";
-import { ChevronDownIcon } from "@heroicons/react/16/solid";
+import { type Metadata } from 'next'
+import Image from 'next/image'
+
+import { Card } from '@/components/Card'
+import { SimpleLayout } from '@/components/SimpleLayout'
+import logoBookShop from '@/images/logos/book-shop.svg'
+import LogoTravel from '@/images/logos/Travels.svg'
+import logoR from '@/images/logos/R.svg'
+import logoSki from '@/images/logos/ski.svg'
+import logoBank from '@/images/logos/bank.svg'
+import music from "@/images/logos/Music.svg"
+const projects = [
+  {
+    name: 'Book Store Website',
+    description:
+      'The Book Store Website is a sleek, responsive platform for browsing books online.',
+    link: {
+      href: 'https://hakimanoori.github.io/Book-Store-website',
+      label: 'hakimanoori.github.io/Book-Store-website',
+    },
+    logo: logoBookShop,
+  },
+  {
+    name: 'Travel-Website',
+    description:
+      'A sleek travel platform showcasing destinations with a smooth, enjoyable browsing experience.',
+    link: {
+      href: 'https://hakimanoori.github.io/Travel-Website',
+      label: 'hakimanoori.github.io/Travel-Website',
+    },
+    logo: LogoTravel,
+  },
+  {
+    name: 'Roshanak',
+    description:
+      'Roshanak is a web platform that empowers Afghan girls through accessible education, mentorship, and skill-building opportunities.',
+    link: {
+      href: 'https://fatima-hassani-roshanak.netlify.app',
+      label: 'fatima-hassani-roshanak.netlify.app',
+    },
+    logo: logoR,
+  },
+  {
+    name: 'skincare',
+    description:
+      'A beautiful skincare platform offering luxurious products with a pleasant, user-friendly experience.',
+    link: {
+      href: 'https://fatima-hassani-skincare-project.netlify.app',
+      label: 'fatima-hassani-skincare-project.netlify.app',
+    },
+    logo: logoSki,
+  },
+  {
+    name: 'Bankist',
+    description:
+      'is a small demo banking site for practicing transfers, loans, and other interactive banking features.',
+    link: {
+      href: 'https://bankist-mousavi.netlify.app/',
+      label: 'bankist-mousavi.netlify.app',
+    },
+    logo: logoBank,
+  },
+  {
+    name: 'Music site',
+    description:
+      'is a small demo banking site for practicing transfers, loans, and other interactive banking features.',
+    link: {
+      href: 'https://music-projct-333.netlify.app',
+      label: 'music-projct-333.netlify.app',
+    },
+    logo: music,
+  },
+]
+
+function LinkIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true" {...props}>
+      <path
+        d="M15.712 11.823a.75.75 0 1 0 1.06 1.06l-1.06-1.06Zm-4.95 1.768a.75.75 0 0 0 1.06-1.06l-1.06 1.06Zm-2.475-1.414a.75.75 0 1 0-1.06-1.06l1.06 1.06Zm4.95-1.768a.75.75 0 1 0-1.06 1.06l1.06-1.06Zm3.359.53-.884.884 1.06 1.06.885-.883-1.061-1.06Zm-4.95-2.12 1.414-1.415L12 6.344l-1.415 1.413 1.061 1.061Zm0 3.535a2.5 2.5 0 0 1 0-3.536l-1.06-1.06a4 4 0 0 0 0 5.656l1.06-1.06Zm4.95-4.95a2.5 2.5 0 0 1 0 3.535L17.656 12a4 4 0 0 0 0-5.657l-1.06 1.06Zm1.06-1.06a4 4 0 0 0-5.656 0l1.06 1.06a2.5 2.5 0 0 1 3.536 0l1.06-1.06Zm-7.07 7.07.176.177 1.06-1.06-.176-.177-1.06 1.06Zm-3.183-.353.884-.884-1.06-1.06-.884.883 1.06 1.06Zm4.95 2.121-1.414 1.414 1.06 1.06 1.415-1.413-1.06-1.061Zm0-3.536a2.5 2.5 0 0 1 0 3.536l1.06 1.06a4 4 0 0 0 0-5.656l-1.06 1.06Zm-4.95 4.95a2.5 2.5 0 0 1 0-3.535L6.344 12a4 4 0 0 0 0 5.656l1.06-1.06Zm-1.06 1.06a4 4 0 0 0 5.657 0l-1.061-1.06a2.5 2.5 0 0 1-3.535 0l-1.061 1.06Zm7.07-7.07-.176-.177-1.06 1.06.176.178 1.06-1.061Z"
+        fill="currentColor"
+      />
+    </svg>
+  )
+}
 
 export const metadata: Metadata = {
-  title: "Projects",
-  description: "Projects We’ve Built to Leave Our Mark on the World",
-};
+  title: 'Projects',
+  description: 'Projects We’ve Built to Leave Our Mark on the World',
+}
 
 export default function Projects() {
   return (
-    <section id="contactus">
-      <div className="isolate px-6 py-24 sm:py-32 lg:px-8 bg-white text-gray-900">
-        <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl">
-            Contact Us
-          </h2>
-          <p className="mt-2 text-lg text-gray-600">
-            Aute magna irure deserunt veniam aliqua magna enim voluptate.
-          </p>
-        </div>
-
-        <form
-          action="#"
-          method="POST"
-          className="mx-auto mt-16 max-w-xl sm:mt-20"
+      <SimpleLayout
+        title="Projects We’ve Built to Leave Our Mark on the World"
+        intro="Over the months, we’ve worked on a variety of projects — each one a step toward growth and innovation. These are the ones we’re most proud of. Many are open-source, built with care and collaboration in mind. If something catches your attention, feel free to explore the code and share your ideas for improvement."
+      >
+        <ul
+          role="list"
+          className="grid grid-cols-1 gap-x-12 gap-y-16 sm:grid-cols-2 lg:grid-cols-3"
         >
-          <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
-            <div>
-              <label
-                htmlFor="first-name"
-                className="block text-sm font-semibold text-gray-900"
-              >
-                First name
-              </label>
-              <div className="mt-2.5">
-                <input
-                  id="first-name"
-                  name="first-name"
-                  type="text"
-                  autoComplete="given-name"
-                  className="block w-full rounded-md border-0 bg-gray-100 px-3.5 py-2 text-base text-gray-900 outline outline-1 outline-gray-200 placeholder:text-gray-400 focus:outline-2 focus:outline-teal-500"
+          {projects.map((project) => (
+            <Card as="li" key={project.name}>
+              <div className="relative z-10 flex h-12 w-12 items-center justify-center rounded-full bg-white shadow-md ring-1 shadow-zinc-800/5 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
+                <Image
+                  src={project.logo}
+                  alt=""
+                  className="h-8 w-8"
+                  unoptimized
                 />
               </div>
-            </div>
-
-            <div>
-              <label
-                htmlFor="last-name"
-                className="block text-sm font-semibold text-gray-900"
-              >
-                Last name
-              </label>
-              <div className="mt-2.5">
-                <input
-                  id="last-name"
-                  name="last-name"
-                  type="text"
-                  autoComplete="family-name"
-                  className="block w-full rounded-md border-0 bg-gray-100 px-3.5 py-2 text-base text-gray-900 outline outline-1 outline-gray-200 placeholder:text-gray-400 focus:outline-2 focus:outline-teal-500"
-                />
-              </div>
-            </div>
-
-            <div className="sm:col-span-2">
-              <label
-                htmlFor="company"
-                className="block text-sm font-semibold text-gray-900"
-              >
-                Company
-              </label>
-              <div className="mt-2.5">
-                <input
-                  id="company"
-                  name="company"
-                  type="text"
-                  autoComplete="organization"
-                  className="block w-full rounded-md border-0 bg-gray-100 px-3.5 py-2 text-base text-gray-900 outline outline-1 outline-gray-200 placeholder:text-gray-400 focus:outline-2 focus:outline-teal-500"
-                />
-              </div>
-            </div>
-
-            <div className="sm:col-span-2">
-              <label
-                htmlFor="email"
-                className="block text-sm font-semibold text-gray-900"
-              >
-                Email
-              </label>
-              <div className="mt-2.5">
-                <input
-                  id="email"
-                  name="email"
-                  type="email"
-                  autoComplete="email"
-                  className="block w-full rounded-md border-0 bg-gray-100 px-3.5 py-2 text-base text-gray-900 outline outline-1 outline-gray-200 placeholder:text-gray-400 focus:outline-2 focus:outline-teal-500"
-                />
-              </div>
-            </div>
-
-            <div className="sm:col-span-2">
-              <label
-                htmlFor="phone-number"
-                className="block text-sm font-semibold text-gray-900"
-              >
-                Phone number
-              </label>
-              <div className="mt-2.5">
-                <div className="flex rounded-md border-0 bg-gray-100 outline outline-1 outline-gray-200 focus-within:outline-2 focus-within:outline-teal-500">
-                  <div className="grid shrink-0 grid-cols-1 relative">
-                    <select
-                      id="country"
-                      name="country"
-                      autoComplete="country"
-                      aria-label="Country"
-                      className="col-start-1 row-start-1 w-full appearance-none rounded-md bg-transparent py-2 pr-7 pl-3.5 text-base text-gray-600 placeholder:text-gray-400 focus:outline-none sm:text-sm"
-                    >
-                      <option>US</option>
-                      <option>CA</option>
-                      <option>EU</option>
-                    </select>
-                    <ChevronDownIcon
-                      aria-hidden="true"
-                      className="pointer-events-none col-start-1 row-start-1 mr-2 size-5 self-center justify-self-end text-gray-600 sm:size-4"
-                    />
-                  </div>
-                  <input
-                    id="phone-number"
-                    name="phone-number"
-                    type="text"
-                    placeholder="123-456-7890"
-                    className="block min-w-0 grow rounded-md border-0 bg-transparent py-1.5 pr-3 pl-1 text-base text-gray-900 placeholder:text-gray-400 focus:outline-none sm:text-sm"
-                  />
-                </div>
-              </div>
-            </div>
-
-            <div className="sm:col-span-2">
-              <label
-                htmlFor="message"
-                className="block text-sm font-semibold text-gray-900"
-              >
-                Message
-              </label>
-              <div className="mt-2.5">
-                <textarea
-                  id="message"
-                  name="message"
-                  rows={4}
-                  className="block w-full rounded-md border-0 bg-gray-100 px-3.5 py-2 text-base text-gray-900 outline outline-1 outline-gray-200 placeholder:text-gray-400 focus:outline-2 focus:outline-teal-500"
-                  defaultValue={""}
-                />
-              </div>
-            </div>
-
-            <div className="flex gap-x-4 sm:col-span-2">
-              <div className="flex h-6 items-center">
-                <div className="group relative inline-flex w-8 shrink-0 rounded-full bg-gray-100 p-px ring-1 ring-gray-200 transition-colors duration-200 ease-in-out has-checked:bg-teal-400">
-                  <span className="size-4 rounded-full bg-white shadow-xs ring-1 ring-gray-900/5 transition-transform duration-200 ease-in-out group-has-checked:translate-x-3.5" />
-                  <input
-                    id="agree-to-policies"
-                    name="agree-to-policies"
-                    type="checkbox"
-                    aria-label="Agree to policies"
-                    className="absolute inset-0 appearance-none focus:outline-hidden"
-                  />
-                </div>
-              </div>
-              <label
-                htmlFor="agree-to-policies"
-                className="text-sm text-gray-600"
-              >
-                By selecting this, you agree to our{" "}
-                <a
-                  href="#"
-                  className="font-semibold text-teal-500 hover:text-teal-400"
-                >
-                  privacy policy
-                </a>
-                .
-              </label>
-            </div>
-          </div>
-
-          <div className="mt-10">
-            <button
-              type="submit"
-              className="block w-full rounded-md bg-teal-600 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-500"
-            >
-              Let&apos;s talk
-            </button>
-          </div>
-        </form>
-      </div>
-    </section>
-  );
+              <h2 className="mt-6 text-base font-semibold text-zinc-800 dark:text-zinc-100">
+                <Card.Link href={project.link.href}>{project.name}</Card.Link>
+              </h2>
+              <Card.Description>{project.description}</Card.Description>
+              <p className="relative z-10 mt-6 flex text-sm font-medium text-zinc-400 transition group-hover:text-teal-500 dark:text-zinc-200">
+                <LinkIcon className="h-6 w-6 flex-none" />
+                <span className="ml-2">{project.link.label}</span>
+              </p>
+            </Card>
+          ))}
+        </ul>
+      </SimpleLayout>
+  )
 }

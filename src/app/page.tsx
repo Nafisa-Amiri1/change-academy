@@ -7,7 +7,7 @@ import Services from '@/components/Services'
 import About from '@/components/About'
 import OurTeam from '@/components/OurTeam'
 import ContactUs from '@/components/contactUs'
-import Projects from './projects/page'
+import Projects from '@/components/Projects'
 import HomeHero from '@/components/HomeHero'
 
 export default async function Home() {
