@@ -10,7 +10,8 @@ import OurTeam from '@/components/OurTeam'
 import ContactUs from '@/components/contactUs'
 import Projects from '@/components/Projects'
 import HomeHero from '@/components/HomeHero'
-
+import MediaTeam from '@/components/MediaTeamCards'
+  
 export default async function Home() {
   return (
     <>
@@ -37,6 +38,10 @@ export default async function Home() {
 
         <section id="ourteam">
           <OurTeam />
+        </section>
+
+        <section id="MediaTeam">
+          <MediaTeam />
         </section>
 
         <section id="contact">

@@ -50,7 +50,7 @@ export default function FeaturesSection() {
             <div className="max-w-6xl mx-auto text-center px-4 sm:px-6 lg:px-8">
                 {/* عنوان و توضیحات */}
                 <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 leading-snug">
-                    Boost Your Brand. Save Your Time. Let Our Media Team Handle It.
+                    Boost Your Brand. Save Your Time. <br /> Let Our Media Team Handle It.
                 </h2>
                 <p className="text-base sm:text-lg text-gray-600 mb-12">
                     We help businesses stand out online through creative design, smart marketing, and consistent brand strategy.
