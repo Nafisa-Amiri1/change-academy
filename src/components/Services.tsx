@@ -109,36 +109,34 @@ const features = [
 
 const FeaturesSection: React.FC = () => {
     return (
-        <section className="bg-white dark:bg-[#18181b] py-24 sm:py-32 transition-colors duration-500 overflow-x-hidden max-w-4xl m-auto">
+        <section
+            id="services"
+            className="bg-white py-24 sm:py-32 transition-all duration-500 overflow-x-hidden max-w-4xl m-auto"
+        >
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 <div className="text-center max-w-2xl mx-auto">
-                    <h2 className="text-base font-semibold text-black  dark:text-white">
+                    <p className="mt-2 text-3xl font-semibold tracking-tight text-gray-900 sm:text-5xl">
                         Our Services
-                    </h2>
-                    <p className="mt-2 text-3xl font-semibold tracking-tight text-gray-900 dark:text-white sm:text-5xl">
-                        Complete solutions for your digital success
                     </p>
-                    <p className="mt-6 text-lg text-gray-700 dark:text-gray-300">
-                        From web development and UI/UX design to programming training and tech consulting,
-                        our services are tailored to your needs. Whether you are a beginner or a professional,
-                        we are here to support your growth and projects.
+                    <p className="mt-6 text-lg text-gray-700">
+                        We provide complete digital solutions — from web development and UI/UX design to training and tech consulting — all tailored to your needs. Whether you're starting out or scaling up, we’re here to help you grow.
                     </p>
                 </div>
 
-                <div className="mt-16 sm:mt-20 lg:mt-24 ">
-                    <dl className="grid grid-cols-1 sm:grid-cols-2 gap-8 lg:gap-12 max-w-4xl mx-auto ">
+                <div className="mt-16 sm:mt-20 lg:mt-24">
+                    <dl className="grid grid-cols-1 sm:grid-cols-2 gap-8 lg:gap-12 max-w-4xl mx-auto">
                         {features.map((feature, index) => (
                             <div
                                 key={index}
                                 className="relative bg-white p-6 pl-16 rounded-xl  hover:bg-gray-50  hover:text-teal-500 transition-all duration-300"
                             >
-                                <dt className="text-base font-semibold text-gray-900 dark:text-white">
+                                <dt className="text-base font-semibold text-gray-900">
                                     <div className="absolute top-4 left-1 flex w-12 h-12 items-center justify-center rounded-lg bg-[#68d2bc] text-white">
                                         {feature.icon}
                                     </div>
                                     {feature.title}
                                 </dt>
-                                <dd className="mt-2 text-gray-700 dark:text-gray-300">
+                                <dd className="mt-2 text-gray-700">
                                     {feature.description}
                                 </dd>
                             </div>
