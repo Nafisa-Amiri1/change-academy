@@ -3,7 +3,6 @@ import home1 from "@/images/media-img/home1.png";
 import home2 from "@/images/media-img/home2.png";
 import home3 from "@/images/media-img/home3.png";
 import Link from "next/link";
-import ContactUs from "@/components/ContactUs";
 
 export default function FeaturesSection() {
     const features = [
@@ -100,7 +99,7 @@ export default function FeaturesSection() {
                         </p>
 
                         <div className="mt-8">
-                            <Link href="/contact">
+                            <Link href="#contactUs">
                                 <button className="px-6 py-3 bg-[#68d2bc] text-white font-semibold rounded-xl hover:bg-[#57b0a4] transition-colors duration-300">
                                     Contact Us
                                 </button>
