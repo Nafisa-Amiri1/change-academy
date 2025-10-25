@@ -1,6 +1,7 @@
 import Image, { type ImageProps } from 'next/image'
 import Link from 'next/link'
 import clsx from 'clsx'
+import React from 'react'
 import { Container } from '@/components/Container'
 import Blog from '@/components/Blog'
 import Services from '@/components/Services'
