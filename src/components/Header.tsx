@@ -165,7 +165,7 @@ function AvatarContainer({
     <div
       className={clsx(
         className,
-        'h-10 w-10 rounded-full bg-white/90 p-0.5 shadow-lg ring-1 shadow-zinc-800/5 ring-zinc-900/5 backdrop-blur-sm dark:bg-zinc-800/90 dark:ring-white/10',
+        'h-10 w-10 rounded-full bg-white/90 p-0.5 shadow-lg ring-1 shadow-zinc-800/5 ring-zinc-900/5 backdrop-blur-sm'
       )}
       {...props}
     />
@@ -193,7 +193,7 @@ function Avatar({
         alt=""
         sizes={large ? '4rem' : '2.25rem'}
         className={clsx(
-          'rounded-full bg-zinc-100 object-cover dark:bg-zinc-800',
+          'rounded-full bg-zinc-100 object-cover',
           large ? 'h-16 w-16' : 'h-9 w-9',
         )}
         priority
@@ -389,7 +389,7 @@ export function Header() {
                 <div className="pointer-events-auto">
                   <Link
                     href="/hire-us"
-                    className="transitionhover:text-teal-500 hpover:bg-teal-500 relative block rounded-full bg-teal-400 px-3 py-2 text-white"
+                    className="transitionhover:text-teal-500 hpover:bg-teal-500 relative block rounded-full bg-teal-600 px-3 py-2 text-white"
                   >
                     Hire Us
                   </Link>
